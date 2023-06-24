@@ -6,7 +6,8 @@
     <title>Document</title>
     <style>
         li {
-            list-style-type:' \1F32D';
+            /* list-style: '\1f32d' inside; */
+            list-style: hiragana inside;
             /* 
                 none
                 disc, square, circle
@@ -14,13 +15,21 @@
                 cjk-ideographic, hiragana, katakana
                 hebrew, georgian , armenian, lower-greek   
             */
+            /* list-style-position: inside; */
+            /* inside, outside */
+
+            /* list-style-image: url('https://picsum.photos/id/237/100/100'); */
+        }
+        li::marker {
+            color: red;
+            font-size: 2rem;
         }
     </style>
 </head>
 <body>
     <h1>hotdog &#127789;</h1>
     <ul>
-        <li>項目清單</li>
+        <li>項目清單<br>項目清單</li>
         <li>項目清單</li>
         <li>項目清單</li>
         <li>項目清單</li>
