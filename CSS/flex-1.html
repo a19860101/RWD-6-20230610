@@ -10,6 +10,8 @@
         }
         .container {
             width: 1200px;
+            height: 800px;
+            text-align: justify;
             background-color: #ccc;
             margin-inline: auto;
 
@@ -18,11 +20,29 @@
             flex-direction: row;
             /* row, column, row-reverse, column-reverse */
             /* flex-flow: wrap row-reverse; */
+
+            justify-content: space-around;
+            /* 
+                start, center, end,
+                space-between, space-around, space-evenly
+            */
+
+            align-items: center;
+            /* 
+                start, center, end.
+                stretch, baseline
+            */
         }
         .box {
-            width: 300px;
+            width: 200px;
             padding: 15px;
 
+        }
+        .box:nth-of-type(even){
+            background-color: #098;
+        }
+        .box:nth-of-type(odd){
+            background-color: #fa0;
         }
     </style>
 </head>
@@ -38,11 +58,14 @@
             <h2>title 2</h2>
             <p>
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum eveniet nam iste quo alias dolor perspiciatis earum ratione quia nemo, sed, maiores ipsum obcaecati pariatur repellendus aspernatur nisi ullam laudantium?
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum eveniet nam iste quo alias dolor perspiciatis earum ratione quia nemo, sed, maiores ipsum obcaecati pariatur repellendus aspernatur nisi ullam laudantium?
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum eveniet nam iste quo alias dolor perspiciatis earum ratione quia nemo, sed, maiores ipsum obcaecati pariatur repellendus aspernatur nisi ullam laudantium?
             </p>
         </div>
         <div class="box">
             <h2>title 3</h2>
             <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum eveniet nam iste quo alias dolor perspiciatis earum ratione quia nemo, sed, maiores ipsum obcaecati pariatur repellendus aspernatur nisi ullam laudantium?
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum eveniet nam iste quo alias dolor perspiciatis earum ratione quia nemo, sed, maiores ipsum obcaecati pariatur repellendus aspernatur nisi ullam laudantium?
             </p>
         </div>
