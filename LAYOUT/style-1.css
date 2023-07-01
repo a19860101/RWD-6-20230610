@@ -94,6 +94,7 @@ header img {
 }
 .news-header {
     aspect-ratio: 4 / 3;
+    clip-path: polygon(0 0 , 100% 0 , 100% 100%,0 calc(100% - 3vw));
 }
 .news-header img {
     width: 100%;
@@ -103,6 +104,8 @@ header img {
 .news-body {
     padding:12px;
     background-color: #fff;
+
+    margin-top: -3vw;
 }
 .news-body p {
     color: rgb(0 0 0 / .8);
