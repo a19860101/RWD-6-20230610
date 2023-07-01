@@ -113,3 +113,14 @@ header img {
     padding: 12px;
     background-color: #fff;
 }
+
+.btn {
+    text-decoration: none;
+    background-color: #540046;
+    color: #fff;
+    display: inline-block;
+    padding: 8px 20px;
+    font-size: 14px;
+    border-radius: 6px;
+    letter-spacing: 1px;
+}
