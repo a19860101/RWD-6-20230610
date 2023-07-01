@@ -21,3 +21,13 @@ nav a {
 .nav-logo {
     font-weight: bold;
 }
+/* header */
+header {
+    width: 100%;
+    height: 600px;
+    background-color: #789;
+    background-image: url('https://picsum.photos/id/95/1200/600');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
