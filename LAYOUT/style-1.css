@@ -1,3 +1,6 @@
+* {
+    box-sizing: border-box;
+}
 body {
     margin: 0;
 }
@@ -25,7 +28,7 @@ nav a {
 header {
     width: 100%;
     /* height: 600px; */
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 3 / 1;
     /* 
     background-color: #789;
     background-image: url('https://picsum.photos/id/95/1200/600');
@@ -47,4 +50,19 @@ header img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+/* container */
+.container {
+    max-width: 1200px;
+    margin-inline: auto;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+/* about */
+.about-col {
+    flex: 1 0 400px;
+    padding: 15px;
 }
