@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        .container {
+            max-width: 1200px;
+            margin-inline: auto;
+            background-color: #eee;
+
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .box {
+            flex: 1 0 300px;
+            padding: 15px;
+        }
+        /* 
+            order 排序
+            自然排序 -> 人工排序（order）
+        */
+        .box:nth-of-type(1){order:3;}
+        /* .box:nth-of-type(2){order:4;} */
+        .box:nth-of-type(3){order:1;}
+        .box:nth-of-type(4){order:2;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <h2>title 1</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste dolor, hic nihil suscipit reprehenderit nostrum consectetur ipsam aliquam eveniet quis, quod debitis expedita perferendis porro soluta tenetur neque itaque. Molestiae.
+            </p>
+        </div>
+        <div class="box">
+            <h2>title 2</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste dolor, hic nihil suscipit reprehenderit nostrum consectetur ipsam aliquam eveniet quis, quod debitis expedita perferendis porro soluta tenetur neque itaque. Molestiae.
+            </p>
+        </div>
+        <div class="box">
+            <h2>title 3</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste dolor, hic nihil suscipit reprehenderit nostrum consectetur ipsam aliquam eveniet quis, quod debitis expedita perferendis porro soluta tenetur neque itaque. Molestiae.
+            </p>
+        </div>
+        <div class="box">
+            <h2>title 4</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste dolor, hic nihil suscipit reprehenderit nostrum consectetur ipsam aliquam eveniet quis, quod debitis expedita perferendis porro soluta tenetur neque itaque. Molestiae.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
