@@ -79,12 +79,18 @@ header img {
     padding: 15px;
 }
 /* news */
+#news {
+    padding-block: 120px;
+    background-color: #fff3d4;
+}
 .news-col {
-    flex:0 0 300px;
+    flex:1 0 300px;
     padding:15px;
 }
 .news-card {
-    border: 1px solid #000;
+    border: 1px solid #b6b6b6;
+    border-radius: 8px;
+    overflow: hidden;
 }
 .news-header {
     aspect-ratio: 4 / 3;
@@ -96,7 +102,14 @@ header img {
 }
 .news-body {
     padding:12px;
+    background-color: #fff;
+}
+.news-body p {
+    color: rgb(0 0 0 / .8);
+    font-size: .9rem;
+    line-height: 1.7;
 }
 .news-footer {
     padding: 12px;
+    background-color: #fff;
 }
