@@ -34,7 +34,14 @@ header {
     background-size: cover; 
     */
 
-    background-color: #833d3d;
+    background-color: #ff2525;
+    /* 
+    空隙問題
+    當區塊包住行內時，如果沒有設定高度，就會有4px左右的空隙
+    */
+}
+img {
+    display: block;
 }
 header img {
     width: 100%;
