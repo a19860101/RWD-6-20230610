@@ -24,6 +24,12 @@ nav a {
     text-decoration: none;
     padding-inline: 15px;
 }
+.nav-link:hover {
+    background-color: #fee81d;
+    color: #540046;
+    padding-block: 8px;
+    border-radius: 5px;
+}
 .nav-logo {
     font-weight: bold;
 }
@@ -130,6 +136,10 @@ header img {
     font-size: 14px;
     border-radius: 6px;
     letter-spacing: 1px;
+}
+.btn:hover {
+    background-color: #fee81d;
+    color: #540046;
 }
 /* service */
 #service {
