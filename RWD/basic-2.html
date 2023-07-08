@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        .container {
+            max-width: 1200px;
+            margin-inline: auto;
+        }
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .col {
+            flex: 0 0 100%;
+            padding: 15px;
+            background-color: #fffb82;
+        }
+        @media(min-width:520px){
+            .col {
+                flex: 0 0 calc(100% / 2);
+                background-color: #ff8282;
+            }
+        }
+        @media(min-width:1200px){
+            .col {
+                flex: 0 0 calc(100% / 4);
+                background-color: #82c7ff;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container row">
+        <div class="col">
+            <h2>title</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam nam deserunt optio, quaerat quasi adipisci asperiores, ratione soluta quae nemo eos aliquam obcaecati saepe odit odio quo praesentium quidem consectetur!
+            </p>
+        </div>
+        <div class="col">
+            <h2>title</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam nam deserunt optio, quaerat quasi adipisci asperiores, ratione soluta quae nemo eos aliquam obcaecati saepe odit odio quo praesentium quidem consectetur!
+            </p>
+        </div>
+        <div class="col">
+            <h2>title</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam nam deserunt optio, quaerat quasi adipisci asperiores, ratione soluta quae nemo eos aliquam obcaecati saepe odit odio quo praesentium quidem consectetur!
+            </p>
+        </div>
+        <div class="col">
+            <h2>title</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam nam deserunt optio, quaerat quasi adipisci asperiores, ratione soluta quae nemo eos aliquam obcaecati saepe odit odio quo praesentium quidem consectetur!
+            </p>
+        </div>
+    </div>
+</body>
+</html>
