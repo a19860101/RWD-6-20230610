@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .flip {
+            width: 200px;
+            height: 300px;
+            position: relative;
+            perspective: 800px;
+        }
+        .front {
+            width: 100%;
+            height: 100%;
+            background-color: #e04;
+            position: absolute;
+            transition: all 600ms;
+            transform-origin: left;
+        }
+        .back {
+            width: 100%;
+            height: 100%;
+            background-color: #0af;
+            position: absolute;
+            transform : rotateY(300deg);
+            backface-visibility: hidden;
+            transition: all 600ms;
+            transform-origin: left;
+
+            opacity: 0;
+
+        }
+        .flip:hover .front {
+            transform : rotateY(45deg);
+            opacity: 0;
+        }
+        .flip:hover .back {
+            transform : rotateY(360deg);
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="flip">
+        <div class="front">front Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque quis expedita consequuntur veniam. Atque distinctio odit reprehenderit explicabo eos est qui doloremque iusto. Sequi quis doloremque provident est eaque. Enim.</div>
+        <div class="back">back</div>
+    </div>
+</body>
+</html>
