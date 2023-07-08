@@ -201,7 +201,6 @@ footer {
 @media(min-width:1200px){
     nav {
         height:65px;
-        padding-block:25px;
         align-items: center;
         flex-direction: row;
         padding-block:0;
