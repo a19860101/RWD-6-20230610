@@ -13,19 +13,25 @@
             inset: 0;
             margin: auto;
 
-            transition-property: rotate,scale;
+            /* transition-property: rotate,scale;
             transition-duration: 600ms;
-            transition-delay: 0s;
-            transition-timing-function: ease-in-out;
+            transition-delay: 0s,600ms;
+            transition-timing-function: ease-in-out; */
             /* ease, ease-in, ease-out, ease-in-out, linear */
+
+            transition: all 600ms ease-in-out;
+            /* transition: 
+                rotate 600ms 0s ease-in-out,
+                scale 600ms 600ms ease-in-out; */
         }
 
         .box:hover {
             rotate: 90deg;
             scale: .6;
+            background-color: #fa0;
         }
     </style>
-</head>
+</head> 
 <body>
     <div class="box"></div>
 </body>
