@@ -9,28 +9,28 @@ body {
 }
 nav {
     width: 100%;
-    /* height:65px; */
-    padding-block:25px;
     background-color: #540046;
     display: flex;
-    /* justify-content: space-between; */
-    /* align-items: center; */
-
+    align-items: start;
     position: fixed;
     z-index: 999;
+    flex-direction: column;
+    padding-block:15px;
+    padding-inline: 15px;
 }
 .nav-menu {
-    margin-left: auto;
+    display: flex;
+    flex-direction: column;
 }
 nav a {
     color: #fff;
     text-decoration: none;
     padding-inline: 15px;
+    padding-block: 8px;
 }
 .nav-link:hover {
     background-color: #fee81d;
     color: #540046;
-    padding-block: 8px;
     border-radius: 5px;
 }
 .nav-logo {
@@ -194,4 +194,179 @@ footer {
     padding-block:20px;
     text-align: center;
     text-transform: capitalize;
+}
+@media(min-width:520px){
+    
+}
+@media(min-width:1200px){
+    nav {
+        height:65px;
+        padding-block:25px;
+        align-items: center;
+        flex-direction: row;
+        padding-block:0;
+    }
+    .nav-menu {
+        margin-left: auto;
+        flex-direction: row;
+    }
+    /* header */
+    header {
+        width: 100%;
+        /* height: 600px; */
+        aspect-ratio: 16 / 10;
+        /* 
+        background-color: #789;
+        background-image: url('https://picsum.photos/id/95/1200/600');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover; 
+        */
+    
+        background-color: #ff2525;
+        /* 
+        空隙問題
+        當區塊包住行內時，如果沒有設定高度，就會有4px左右的空隙
+        */
+    
+        position: relative;
+    }
+    .header-text {
+        position: absolute;
+        background-color: #fff;
+        inset:0;
+        margin: auto;
+        width: 600px;
+        height: fit-content;
+        text-align: center;
+        border-radius: 15px;
+    }
+    img {
+        display: block;
+    }
+    header img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    /* container */
+    .container {
+        max-width: 1200px;
+        margin-inline: auto;
+    }
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    /* about */
+    #about {
+        background-color: #ffeffc;
+        padding-block: 120px;
+    }
+    #about h3 {
+        font-size: 1.6rem;
+        text-transform: capitalize;
+    }
+    #about p {
+        line-height: 1.7rem;
+        color: rgb(0 0 0 / .8);
+    }
+    .about-col {
+        flex: 1 0 400px;
+        padding: 15px;
+    }
+    /* news */
+    #news {
+        padding-block: 120px;
+        background-color: #fff3d4;
+    }
+    .news-col {
+        flex:1 0 300px;
+        padding:15px;
+    }
+    .news-card {
+        border: 1px solid #b6b6b6;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+    .news-header {
+        aspect-ratio: 4 / 3;
+        clip-path: polygon(0 0 , 100% 0 , 100% 100%,0 calc(100% - 30px));
+    }
+    .news-header img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .news-body {
+        padding:12px;
+        height: 220px;
+        background-color: #fff;
+    
+        margin-top: -30px;
+    }
+    .news-body p {
+        color: rgb(0 0 0 / .8);
+        font-size: .9rem;
+        line-height: 1.7;
+    }
+    .news-footer {
+        padding: 12px;
+        background-color: #fff;
+    }
+    
+    .btn {
+        text-decoration: none;
+        background-color: #540046;
+        color: #fff;
+        display: inline-block;
+        padding: 8px 20px;
+        font-size: 14px;
+        border-radius: 6px;
+        letter-spacing: 1px;
+    }
+    .btn:hover {
+        background-color: #fee81d;
+        color: #540046;
+    }
+    /* service */
+    #service {
+        padding-block: 120px;
+        background-color: #ffeffc;
+    }
+    #service .container {
+        align-items: center;
+    }
+    #service img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 12px;
+    }
+    .service-col {
+        flex: 1 1 450px;
+        padding: 15px;
+    }
+    .service-col:nth-of-type(1),
+    .service-col:nth-of-type(2){
+        margin-bottom: 100px;
+    }
+    .service-col:nth-of-type(1){order:1;}
+    .service-col:nth-of-type(2){order:2;}
+    .service-col:nth-of-type(3){order:4;}
+    .service-col:nth-of-type(4){order:3;}
+    #service p {
+        color: rgb(0 0 0 / .8);
+        font-size: .9rem;
+        line-height: 1.7;
+    }
+    
+    footer {
+        background-color: #222;
+        color: #fff;
+        padding-block:20px;
+        text-align: center;
+        text-transform: capitalize;
+    }
 }
