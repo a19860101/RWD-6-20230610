@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: #098;
+            position: absolute;
+            inset: 0;
+            margin: auto;
+
+            transition-property: rotate,scale;
+            transition-duration: 600ms;
+            transition-delay: 0s;
+            transition-timing-function: ease-in-out;
+            /* ease, ease-in, ease-out, ease-in-out, linear */
+        }
+
+        .box:hover {
+            rotate: 90deg;
+            scale: .6;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>
