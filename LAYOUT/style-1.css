@@ -29,6 +29,9 @@ nav a {
     padding-inline: 15px;
     padding-block: 8px;
 }
+.nav-link {
+    transition: all 600ms;
+}
 .nav-link:hover {
     background-color: #fee81d;
     color: #540046;
@@ -160,6 +163,7 @@ header img {
     font-size: 14px;
     border-radius: 6px;
     letter-spacing: 1px;
+    transition: all 600ms;
 }
 .btn:hover {
     background-color: #fee81d;
