@@ -44,8 +44,16 @@
         let drinks_price = drinks.map(function(data){
             return data.price;
         })
-        console.log(drinks_name)
-        console.log(drinks_price)
+        // console.log(drinks_name)
+        // console.log(drinks_price)
+
+        // filter()
+        let drinks_filter = drinks.filter(function(data){
+            // return data.price > 20;
+            // return data.name === '珍珠奶茶';
+            return data.name != '珍珠奶茶';
+        });
+        console.log(drinks_filter)
     </script>
 </body>
 </html>
