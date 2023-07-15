@@ -11,9 +11,21 @@
             background-color: #098;
 
             animation-name: go;
-            animation-duration: 2s;
+            animation-duration: 1s;
+            animation-delay: 0s;
+            animation-direction: normal;
+            /* normal, reverse, alternate, alternate-reverse */
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+            /* backwards, forwards */
+            animation-timing-function: ease;
         }
         @keyframes go {
+            to {
+                transform: translate(500px,200px);
+            }
+        }
+        @keyframes go2 {
             0% {}
             25% {transform: translate(500px,0);}
             50% {transform: translate(500px,500px);}
