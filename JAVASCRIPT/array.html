@@ -10,11 +10,27 @@
         // let foods = new Array();
         // foods[0] = '麵線';
         // foods[1] = '滷肉飯';
-        let foods = ['麵線','滷肉飯','貢丸湯'];
-        console.log(foods);
-        console.log(foods[0])
-        console.log(foods[1])
-        console.log(foods[2])
+        let foods = ['麵線','滷肉飯','貢丸湯','炸豬排','油豆腐'];
+        // console.log(foods);
+        // console.log(foods[0])
+        // console.log(foods[1])
+        // console.log(foods[2])
+        
+        // 陣列迭代
+        console.log(foods.length);
+        for(let i=0;i<foods.length;i++){
+            console.log(foods[i]);
+        }
+        // for...in 取得陣列索引值
+        for(let item in foods){
+            console.log(foods[item]);
+        }
+
+        // for...of 取得陣列內容
+        for(let data of foods){
+            console.log(data);
+        }
+
     </script>
 </body>
 </html>
