@@ -11,27 +11,46 @@
         // foods[0] = '麵線';
         // foods[1] = '滷肉飯';
         let foods = ['麵線','滷肉飯','貢丸湯','炸豬排','油豆腐'];
-        // console.log(foods);
+        console.log(foods);
         // console.log(foods[0])
         // console.log(foods[1])
         // console.log(foods[2])
         
         // 陣列迭代
-        console.log(foods.length);
-        for(let i=0;i<foods.length;i++){
-            console.log(foods[i]);
-        }
+        // console.log(foods.length);
+        // for(let i=0;i<foods.length;i++){
+        //     console.log(foods[i]);
+        // }
         // for...in 取得陣列索引值
-        for(let item in foods){
+        // for(let item in foods){
             // console.log(foods[item]);
-            console.log(item)
-        }
+            // console.log(item)
+        // }
 
         // for...of 取得陣列內容
-        for(let data of foods){
-            console.log(data);
-        }
+        // for(let data of foods){
+            // console.log(data);
+        // }
 
+        //陣列方法
+
+        // push() 在陣列後方增加一筆資料
+        foods.push('炒青菜');
+        console.log(foods);
+        
+        // pop() 刪除陣列最後一筆資料
+        foods.pop();
+        foods.pop();
+        console.log(foods);
+
+        // unshift() 在陣列前方增加一筆資料
+        foods.unshift('白飯');
+        console.log(foods);
+        
+        // shift() 刪除陣列第一筆資料
+        foods.shift();
+        foods.shift();
+        console.log(foods);
     </script>
 </body>
 </html>
