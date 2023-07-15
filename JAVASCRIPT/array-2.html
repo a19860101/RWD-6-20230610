@@ -32,10 +32,20 @@
 
         // forEach()
         drinks.forEach(function(data,idx){
-            console.log(data.name);
+            // console.log(data.name);
             // console.log(data.price);
-            console.log(idx);
+            // console.log(idx);
         })
+
+        // map()
+        let drinks_name = drinks.map(function(data){
+            return data.name;
+        })
+        let drinks_price = drinks.map(function(data){
+            return data.price;
+        })
+        console.log(drinks_name)
+        console.log(drinks_price)
     </script>
 </body>
 </html>
