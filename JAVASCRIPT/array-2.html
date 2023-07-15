@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let drinks = [
+            {
+                name:'紅茶',
+                price: 15,
+            },
+            {
+                name:'綠茶',
+                price: 15,
+            },
+            {
+                name: '奶茶',
+                price: 20
+            },
+            {
+                name: '冰淇淋紅茶',
+                price: 50
+            },
+            {
+                name: '珍珠奶茶',
+                price: 45
+            }
+        ];
+
+        // forEach()
+        drinks.forEach(function(data,idx){
+            console.log(data.name);
+            // console.log(data.price);
+            console.log(idx);
+        })
+    </script>
+</body>
+</html>
