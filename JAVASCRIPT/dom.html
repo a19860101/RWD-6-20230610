@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- dom -->
+    <h1 id="title">DOM Document Object Model</h1>
+    <h2 class="subtitle">文件物件模型</h2>
+    <ul>
+        <li class="item">list 1</li>
+        <li class="item">list 2</li>
+        <li class="item">list 3</li>
+        <li class="item">list 4</li>
+    </ul>
+    <script>
+        let title = document.getElementById('title');
+        console.log(title);
+        let subtitle = document.getElementsByClassName('subtitle');
+        console.log(subtitle);
+        let item = document.getElementsByClassName('item');
+        console.log(item);
+        let ul = document.getElementsByTagName('ul');
+        console.log(ul);
+        let li = document.getElementsByTagName('li');
+        console.log(li);
+        console.log(li[0]);
+        console.log(li[1]);
+        console.log(li[2]);
+        console.log(li[3]);
+    </script>
+</body>
+</html>
