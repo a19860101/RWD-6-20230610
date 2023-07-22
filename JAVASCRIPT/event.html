@@ -13,21 +13,41 @@
     </style>
 </head>
 <body>
-    <button class="add">add</button>
-    <button class="remove">remove</button>
+    <button class="add" onclick="add()">add</button>
+    <button class="remove" onclick="remove()">remove</button>
+    <button class="toggle" onclick="toggle()">toggle</button>
     <p>
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores laborum atque et alias, architecto doloribus, quod quia magni ipsam rem nihil vel officia porro mollitia natus distinctio debitis enim sint!
     </p>
     <script>
-        let add = document.querySelector('.add');
-        let remove = document.querySelector('.remove');
+         // 按鈕寫法一
+        // let add = document.querySelector('.add');
+        // let remove = document.querySelector('.remove');
+        // let toggle = document.querySelector('.toggle');
+        // let p = document.querySelector('p');
+
+        // add.onclick = () => {
+        //     p.classList.add('active');
+        // }
+        // remove.onclick = () => {
+        //     p.classList.remove('active');
+        // }
+        // toggle.onclick = () => {
+        //     p.classList.toggle('active');
+        // }
+
+
+        // 按鈕寫法二
         let p = document.querySelector('p');
 
-        add.onclick = () => {
+        function add(){
             p.classList.add('active');
         }
-        remove.onclick = () => {
+        function remove(){
             p.classList.remove('active');
+        }
+        function toggle(){
+            p.classList.toggle('active');
         }
     </script>
 </body>
