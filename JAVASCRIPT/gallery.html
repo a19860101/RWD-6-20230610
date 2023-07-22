@@ -28,5 +28,13 @@
             <img src="https://picsum.photos/id/73/600" alt="" class="thumb">
         </div>
     </div>
+    <script>
+        let thumbs = document.querySelectorAll('.thumb');
+        for(let t of thumbs){
+            t.onclick = function(){
+                console.log(this);
+            }
+        }
+    </script>
 </body>
 </html>
