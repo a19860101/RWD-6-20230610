@@ -7,7 +7,8 @@
 </head>
 <body>
     <script>
-        // function declaration 函式宣告式
+        console.log(square(100,246));
+        // function declaration 函式宣告式(提升性)
         function a(){
             return 'hello';
         }
@@ -21,6 +22,7 @@
         }
         console.log(square(100,246));
 
+
         // function expression 函式表達式
         let test = function(){
             return 'test';
@@ -30,6 +32,28 @@
             return us * exc;
         }
         console.log(us_ntd(1699,30));
+
+
+        // arrow function 箭頭函示
+        // 箭頭函示與一般函式的差別在this的使用
+
+        let qq = () => {
+            return 'qq';
+        }
+
+        // 當參數只有一個 小括號可以省略
+        let qq2 = x => {
+            return x;
+        }
+        let qq3 = (x,y) => {
+            return x + y;
+        }
+
+        // 當動作只有return時，大括號與return皆可省略
+        let qq4 = x => x;
+        let qq5 = (x,y) => x*y;
+
+        console.log(qq4(99));
     </script>
 </body>
 </html>
