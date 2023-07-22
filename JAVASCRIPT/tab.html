@@ -16,6 +16,8 @@
         .tab-nav {
             display: flex;
             background-color: #222;
+            position: relative;
+            z-index: 10;
         }
         .tab-link {
             text-decoration: none;
@@ -33,10 +35,22 @@
             padding: 15px;
             background-color: #ccc;
             position: absolute;
-            display: none;
+            /* display: none; */
+
+            visibility: hidden;
+            opacity: 0;
+            transition: 600ms;
+            /* transform: translateY(-10%); */
+            /* filter: blur(10px); */
+
         }
         .tab-panel.active {
-            display: block;
+            /* display: block; */
+            visibility: visible;
+            opacity: 1;
+            /* transform: translateY(0%); */
+            /* filter: blur(0); */
+
         }
     </style>
 </head>
@@ -46,6 +60,7 @@
             <a href="#tab-1" class="tab-link active">Tab 1</a>
             <a href="#tab-2" class="tab-link">Tab 2</a>
             <a href="#tab-3" class="tab-link">Tab 3</a>
+            <a href="#tab-4" class="tab-link">Tab 4</a>
         </div>
         <div class="tab-panel active" id="tab-1">
             <h2>Tab 1</h2>
@@ -63,6 +78,13 @@
         </div>
         <div class="tab-panel" id="tab-3">
             <h2>Tab 3</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid corporis ullam non voluptatibus velit dignissimos fugit iusto! Aspernatur, autem? Natus dignissimos facere et labore earum qui dolor ipsum quos non?
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid corporis ullam non voluptatibus velit dignissimos fugit iusto! Aspernatur, autem? Natus dignissimos facere et labore earum qui dolor ipsum quos non?
+            </p>
+        </div>
+        <div class="tab-panel" id="tab-4">
+            <h2>Tab 4</h2>
             <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid corporis ullam non voluptatibus velit dignissimos fugit iusto! Aspernatur, autem? Natus dignissimos facere et labore earum qui dolor ipsum quos non?
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid corporis ullam non voluptatibus velit dignissimos fugit iusto! Aspernatur, autem? Natus dignissimos facere et labore earum qui dolor ipsum quos non?
