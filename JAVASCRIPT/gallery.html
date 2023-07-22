@@ -32,7 +32,10 @@
         let thumbs = document.querySelectorAll('.thumb');
         for(let t of thumbs){
             t.onclick = function(){
-                console.log(this);
+                let new_img = this.getAttribute('src');
+                document.querySelector('.main').setAttribute('src',new_img);
+                // let main = document.querySelector('.main');
+                // main.setAttribute('src',new_img);
             }
         }
     </script>
