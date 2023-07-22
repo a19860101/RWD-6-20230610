@@ -4,20 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        p.active {
+            background-color: #ff6b6b;
+            color:#5f0172;
+            padding: 30px;
+        }
+    </style>
 </head>
 <body>
-    <button>click</button>
+    <button class="add">add</button>
+    <button class="remove">remove</button>
     <p>
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores laborum atque et alias, architecto doloribus, quod quia magni ipsam rem nihil vel officia porro mollitia natus distinctio debitis enim sint!
     </p>
     <script>
-        let btn = document.querySelector('button');
-        console.log(btn);
+        let add = document.querySelector('.add');
+        let remove = document.querySelector('.remove');
+        let p = document.querySelector('p');
 
-        btn.onclick = function(){
-            // let p = document.querySelector('p');
-            // p.style.color = '#fa0';
-            document.querySelector('p').style.color = '#fa0';
+        add.onclick = () => {
+            p.classList.add('active');
+        }
+        remove.onclick = () => {
+            p.classList.remove('active');
         }
     </script>
 </body>
