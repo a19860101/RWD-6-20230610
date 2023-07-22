@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const a = function(){
+            console.log(this);
+        }
+        const b = ()=>{
+            console.log(this)
+        }
+       console.log(a());
+       console.log(b());
+        const obj = {
+            title:'this差異',
+            fn1:function a(){
+                return this;
+            },
+            fn2:()=>{
+                return this;
+            }
+        }
+
+        console.log(obj.fn1());
+        console.log(obj.fn2());
+
+        /* 
+            vanilla javascript:原生javascript
+            在vanilla javascript上，使用箭頭函式(arrow function)時，this會指向window
+        */
+    </script>
+</body>
+</html>
