@@ -84,6 +84,20 @@
             return data.name.indexOf('茶') > -1;
         })
         console.log(drinks_every);
+
+        // reduce
+        // let price = [23,45,12];
+        // let total = price.reduce(function(a,b){
+        //     return a + b;
+        // })
+
+        let total = drinks.map(function(data){
+            return data.price;
+        }).reduce(function(a,b){
+            return a+b;
+        })
+        
+        console.log(total);
     </script>
 </body>
 </html>
