@@ -21,7 +21,11 @@
         // console.log(title);
         // let subtitle = document.getElementsByClassName('subtitle');
         // console.log(subtitle);
-        // let item = document.getElementsByClassName('item');
+        let item = document.getElementsByClassName('item');
+
+        item.forEach(function(data){
+            console.log(data);
+        })
         // console.log(item);
         // let ul = document.getElementsByTagName('ul');
         // console.log(ul);
@@ -32,16 +36,38 @@
         // console.log(li[2]);
         // console.log(li[3]);
 
+        /* 
+            getElement
+            HTMLCollection
+            可使用for迭代
+        */
+
+
         // querySelector
         let title = document.querySelector('#title');
-        console.log(title);
-        let item = document.querySelector('.item');
-        console.log(item);
+        // console.log(title);
+        let items = document.querySelector('.item');
+        // console.log(items);
         let li = document.querySelectorAll('li');
         console.log(li);
-        console.log(li[0]);
-        console.log(li[1]);
-        console.log(li[2]);
+        // console.log(li[0]);
+        // console.log(li[1]);
+        // console.log(li[2]);
+        for(let el of li){
+            // console.log(el);
+            el.style.color = 'red';
+            el.style.backgroundColor ='#ccc'
+        }
+
+        li.forEach(function(data){
+            console.log(data)
+        })
+        /* 
+            querySelector
+            NodeList
+            可使用for,forEach迭代
+        */
+
     </script>
 </body>
 </html>

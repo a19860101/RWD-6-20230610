@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li class="item">list 1</li>
+        <li class="item">list 2</li>
+        <li class="item">list 3</li>
+        <li class="item">list 4</li>
+        <li class="item">list 5</li>
+    </ul>
+    <script>
+        // let els = document.querySelectorAll('.item');
+        // let els = document.getElementsByClassName('item');
+        // els = Array.from(els);
+        // els = [...els];
+        let els =[...document.querySelectorAll('.item')];
+        console.log(els);
+        let els_map = els.map(function(data){
+            return data;
+        })
+        console.log(els_map);
+    </script>
+</body>
+</html>
