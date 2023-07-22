@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        p {
+           transition: 600ms; 
+        }
         p.active {
             background-color: #ff6b6b;
             color:#5f0172;
@@ -13,9 +16,12 @@
     </style>
 </head>
 <body>
-    <button class="add" onclick="add()">add</button>
+    <button class="add">add</button>
+    <button class="remove">remove</button>
+    <button class="toggle">toggle</button>
+    <!-- <button class="add" onclick="add()">add</button>
     <button class="remove" onclick="remove()">remove</button>
-    <button class="toggle" onclick="toggle()">toggle</button>
+    <button class="toggle" onclick="toggle()">toggle</button> -->
     <p>
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores laborum atque et alias, architecto doloribus, quod quia magni ipsam rem nihil vel officia porro mollitia natus distinctio debitis enim sint!
     </p>
@@ -38,17 +44,36 @@
 
 
         // 按鈕寫法二
+        // let p = document.querySelector('p');
+
+        // function add(){
+        //     p.classList.add('active');
+        // }
+        // function remove(){
+        //     p.classList.remove('active');
+        // }
+        // function toggle(){
+        //     p.classList.toggle('active');
+        // }
+
+        // 按鈕寫法三
+
+        let add = document.querySelector('.add');
+        let remove = document.querySelector('.remove');
+        let toggle = document.querySelector('.toggle');
         let p = document.querySelector('p');
 
-        function add(){
+        // 加入監聽
+        add.addEventListener('click',function(){
             p.classList.add('active');
-        }
-        function remove(){
+        });
+        remove.addEventListener('click',function(){
             p.classList.remove('active');
-        }
-        function toggle(){
+        });
+        toggle.addEventListener('click',function(){
             p.classList.toggle('active');
-        }
+        });
+
     </script>
 </body>
 </html>
