@@ -73,9 +73,12 @@
         let tabLinks = document.querySelectorAll('.tab-link');
         for(let tl of tabLinks){
             tl.onclick = function(){
-                console.log(this);
                 document.querySelector('.tab-link.active').classList.remove('active');
                 this.classList.add('active');
+                let href = this.getAttribute('href');
+                document.querySelector('.tab-panel.active').classList.remove('active');
+                document.querySelector(href).classList.add('active');
+                console.log(href);
             }
         }
     </script>
