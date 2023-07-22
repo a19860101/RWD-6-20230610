@@ -4,15 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .tab {
+            width: 600px;
+            margin-inline: auto;
+            position: relative;
+        }
+        .tab-nav {
+            display: flex;
+            background-color: #222;
+        }
+        .tab-link {
+            text-decoration: none;
+            color: #fff;
+            padding: 15px;
+        }
+        .tab-link.active {
+            color: #000;
+            background-color: #ccc;
+        }
+        .tab-panel {
+            padding: 15px;
+            background-color: #ccc;
+            position: absolute;
+            display: none;
+        }
+        .tab-panel.active {
+            display: block;
+        }
+    </style>
 </head>
 <body>
-    <div class="tabs">
+    <div class="tab">
         <div class="tab-nav">
-            <a href="#tab-1" class="tab-link">Tab 1</a>
+            <a href="#tab-1" class="tab-link active">Tab 1</a>
             <a href="#tab-2" class="tab-link">Tab 2</a>
             <a href="#tab-3" class="tab-link">Tab 3</a>
         </div>
-        <div class="tab-panel" id="tab-1">
+        <div class="tab-panel active" id="tab-1">
             <h2>Tab 1</h2>
             <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid corporis ullam non voluptatibus velit dignissimos fugit iusto! Aspernatur, autem? Natus dignissimos facere et labore earum qui dolor ipsum quos non?
