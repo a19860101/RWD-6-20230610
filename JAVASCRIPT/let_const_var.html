@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+            let, const
+            不可重複宣告
+            範疇為block scope
+            
+            var
+            可重複宣告
+            範疇為function scope
+        */ 
+
+        let x=10;
+
+        if(x){
+            let y = 10;
+            var z = 99;
+            console.log(z)
+        }
+        console.log(z);
+
+        function q(){
+            let u = 10;
+            var uu = 90;
+        }
+        // console.log(u);
+
+        q();
+
+        // let vs const
+
+        //const 不可重新賦值
+
+        const foo = ['apple','banana'];
+        foo.push('cat');
+        foo.unshift('qq');
+        console.log(foo);
+
+        const obj = {
+            name:'john'
+        }
+        obj.mail = 'asdf@mail.com'
+        console.log(obj)
+
+        const fn1 = function(){
+            return 'fn1';
+        }
+        console.log(fn1())
+    </script>
+</body>
+</html>
