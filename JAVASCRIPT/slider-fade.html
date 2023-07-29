@@ -48,5 +48,23 @@
             <img src="https://picsum.photos/id/47/1200/600" alt="">
         </div>
     </div>
+    <script>
+        let imgs = document.querySelectorAll('.slider-item');
+        let total = imgs.length;
+        let currentIndex = 0;
+        let timeout = 1000;
+
+        function slider(){
+            if(currentIndex === total - 1){
+                currentIndex = 0;
+            }else{
+                currentIndex++;
+            }
+            console.log(currentIndex)
+        }
+
+        setInterval(slider, timeout);
+
+    </script>
 </body>
 </html>
