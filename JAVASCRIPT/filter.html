@@ -4,6 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        li.active {
+            color: #098;
+        }
+        li.del {
+            color: #aaa;
+            text-decoration: line-through;
+        }
+    </style>
 </head>
 <body>
     <input type="text" id="input">
@@ -26,9 +35,13 @@
             for(let item of li){
                 console.log(item.textContent);
                 if(item.textContent.indexOf(input.value) > -1){
-                    item.style.display = '';
+                    // item.style.display = '';
+                    item.classList.add('active');
+                    item.classList.remove('del');
                 }else{
-                    item.style.display = 'none';
+                    // item.style.display = 'none';
+                    item.classList.add('del')
+                    item.classList.remove('active')
                 }
             }
         }
