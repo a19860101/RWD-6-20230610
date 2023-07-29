@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        .modal {
+            display: none;
+        }
+        .modal.active {
+            display: block;
+        }
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background-color: rgb(0 0 0 / .8);
+        }
+        .modal-container {
+            max-width: 800px;
+            width: 85%;
+            height: fit-content;
+            padding: 30px;
+            background-color: #fff;
+            position: fixed;
+            inset:0;
+            margin: auto;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <a href="#modal-1" data-modal="#modal-1" class="modal-btn">Modal 1</a>
+    <a href="#modal-2" data-modal="#modal-2" class="modal-btn">Modal 2</a>
+    <div class="modal active" id="modal-1">
+        <div class="modal-overlay"></div>
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2>Modal 1</h2>
+            </div>
+            <div class="modal-body">
+                <h3>title</h3>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem officia autem in odio maiores aliquid rem ad, facere sint saepe blanditiis ipsum? Deserunt cupiditate cumque provident eveniet libero natus eligendi.
+                </p>
+            </div>
+            <div class="modal-footer">
+                <a href="#">close</a>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="modal-2">
+        <div class="modal-overlay"></div>
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2>Modal 2</h2>
+            </div>
+            <div class="modal-body">
+                <h3>title</h3>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem officia autem in odio maiores aliquid rem ad, facere sint saepe blanditiis ipsum? Deserunt cupiditate cumque provident eveniet libero natus eligendi.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem officia autem in odio maiores aliquid rem ad, facere sint saepe blanditiis ipsum? Deserunt cupiditate cumque provident eveniet libero natus eligendi.
+                </p>
+            </div>
+            <div class="modal-footer">
+                <a href="#">close</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
