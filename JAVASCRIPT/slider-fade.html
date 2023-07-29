@@ -70,14 +70,29 @@
         let currentIndex = 0;
         let timeout = 3000;
 
-        function slider(){
+        let prev = document.querySelector('.slider-nav-prev');
+        let next = document.querySelector('.slider-nav-next');
+
+        prev.onclick = function(){
+            slider('prev');
+        }
+        next.onclick = function(){
+            slider();
+        }
+
+        function slider(direction){
             // if(currentIndex === total - 1){
             //     currentIndex = 0;
             // }else{
             //     currentIndex++;
             // }
-
-            currentIndex = (currentIndex + 1) % total;
+            
+            if(direction === 'prev'){
+                currentIndex = currentIndex === 0 ? total : currentIndex;
+                currentIndex = (currentIndex - 1) % total;
+            }else{
+                currentIndex = (currentIndex + 1) % total;
+            }
 
             console.log(currentIndex);
             
