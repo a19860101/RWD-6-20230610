@@ -57,10 +57,16 @@
 <body>
     <div class="tab">
         <div class="tab-nav">
-            <a href="#tab-1" class="tab-link active">Tab 1</a>
+            <a href="javascript:;" data-panel="#tab-1" data-test='123'class="tab-link active">Tab 1</a>
+            <a href="javascript:;" data-panel="#tab-2" class="tab-link">Tab 2</a>
+            <a href="javascript:;" data-panel="#tab-3" class="tab-link">Tab 3</a>
+            <a href="javascript:;" data-panel="#tab-4" class="tab-link">Tab 4</a>
+            <!-- 
+            <a href="#tab-1" data-test='123'class="tab-link active">Tab 1</a>
             <a href="#tab-2" class="tab-link">Tab 2</a>
             <a href="#tab-3" class="tab-link">Tab 3</a>
-            <a href="#tab-4" class="tab-link">Tab 4</a>
+            <a href="#tab-4" class="tab-link">Tab 4</a> 
+            -->
         </div>
         <div class="tab-panel active" id="tab-1">
             <h2>Tab 1</h2>
@@ -97,10 +103,11 @@
             tl.onclick = function(){
                 document.querySelector('.tab-link.active').classList.remove('active');
                 this.classList.add('active');
-                let href = this.getAttribute('href');
+                // let href = this.getAttribute('href');
+                let panel = this.dataset.panel;
                 document.querySelector('.tab-panel.active').classList.remove('active');
-                document.querySelector(href).classList.add('active');
-                console.log(href);
+                // document.querySelector(href).classList.add('active');
+                document.querySelector(panel).classList.add('active');
             }
         }
     </script>
