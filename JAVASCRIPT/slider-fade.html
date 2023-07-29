@@ -138,6 +138,14 @@
             dot.dataset.idx = i;
             document.querySelector('.slider-dots').append(dot);
         }
+        let dots = document.querySelectorAll('.slider-dot');
+        for(let dot of dots){
+            dot.onclick = function(){
+                currentIndex = this.dataset.idx;
+                switchImage();
+                resetTimer();
+            }
+        }
     </script>
 </body>
 </html>
