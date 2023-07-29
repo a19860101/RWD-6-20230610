@@ -6,15 +6,22 @@
     <title>Document</title>
 </head>
 <body>
+    <div class="container">
+    </div>
     <script>
         let url = 'data.json';
+        let el = document.querySelector('.container');
         fetch(url)
         .then(function(response){
             // console.log(response)
             return response.json();
         })
         .then(function(data){
-            console.log(data);
+            let h1 = document.createElement('h1');
+            h1.append(data.title);
+
+
+            el.append(h1);
         })
     </script>
 </body>
