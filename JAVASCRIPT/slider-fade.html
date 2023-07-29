@@ -43,7 +43,6 @@
         .slider-dots {
             position: absolute;
             width: fit-content;
-            background-color: #909090;
             bottom: 0;
             left: 0;
             right: 0;
@@ -56,6 +55,10 @@
             margin: 10px;
             background-color: #f00;
             border-radius: 50%;
+            cursor: pointer;
+        }
+        .slider-dot.active {
+            background-color: #ffe646;
         }
     </style>
 </head>
@@ -119,30 +122,40 @@
 
             // console.log(currentIndex);
             switchImage();
+            switchDot();
            
         }
         function switchImage(){
             document.querySelector('.slider-item.active').classList.remove('active');
             imgs[currentIndex].classList.add('active');
         }
+        function switchDot(){
+            document.querySelector('.slider-dot.active').classList.remove('active');
+            dots[currentIndex].classList.add('active');
+        }
         let timer = setInterval(slider, timeout);
         function resetTimer(){
             clearInterval(timer);
             timer = setInterval(slider,timeout);
         }
-
-        // dots
-        for(let i=0;i<total;i++){
+       
+         // dots
+         for(let i=0;i<total;i++){
             let dot = document.createElement('span');       
             dot.classList.add('slider-dot');
             dot.dataset.idx = i;
             document.querySelector('.slider-dots').append(dot);
         }
+        
+        //取得slider-dots元素
         let dots = document.querySelectorAll('.slider-dot');
+        dots[0].classList.add('active');
+        
         for(let dot of dots){
             dot.onclick = function(){
                 currentIndex = this.dataset.idx;
                 switchImage();
+                switchDot();
                 resetTimer();
             }
         }
