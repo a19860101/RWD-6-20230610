@@ -19,9 +19,16 @@
         .then(function(data){
             let h1 = document.createElement('h1');
             h1.append(data.title);
-
-
             el.append(h1);
+
+            for(let p of data.products){
+                let item = document.createElement('div');
+                let body = `${p.name} : NT.${p.price}`;
+                item.append(body);
+                el.append(item);
+            }
+
+            
         })
     </script>
 </body>
