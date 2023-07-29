@@ -15,12 +15,16 @@
             height: 600px;
             margin-inline: auto;
             position: relative;
+            overflow: hidden;
         }
         img {
             display: block;
         }
         .slider-wrapper {
             display: flex;
+            flex-wrap: wrap;
+
+            transition: 500ms;
         }
         .slider-item {
             width: 1200px;
@@ -91,10 +95,18 @@
         let imgs = document.querySelectorAll('.slider-item');
         let total = imgs.length;
         let currentIndex = 0;
-        let timeout = 6000;
+        let timeout = 3000;
 
         let prev = document.querySelector('.slider-nav-prev');
         let next = document.querySelector('.slider-nav-next');
+
+        let sliderWidth = imgs[0].clientWidth;
+        // let sliderItem = document.querySelector('.slider-item');
+        // let sliderWidth = sliderItem.clientWidth;
+        let wrapperWidth = sliderWidth * total;
+
+        let wrapper = document.querySelector('.slider-wrapper');
+        wrapper.style.width = wrapperWidth + 'px';
 
         prev.onclick = function(){
             slider('prev');
@@ -125,8 +137,7 @@
            
         }
         function switchImage(){
-            document.querySelector('.slider-item.active').classList.remove('active');
-            imgs[currentIndex].classList.add('active');
+            wrapper.style.marginLeft = -(sliderWidth * currentIndex) + 'px';
         }
         function switchDot(){
             document.querySelector('.slider-dot.active').classList.remove('active');
