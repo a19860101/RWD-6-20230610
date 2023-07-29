@@ -21,8 +21,16 @@
     </ul>
     <script>
         let input = document.querySelector('#input');
+        let li = document.querySelectorAll('li');
         input.onkeyup = function(){
-            console.log(input.value)
+            for(let item of li){
+                console.log(item.textContent);
+                if(item.textContent.indexOf(input.value) > -1){
+                    item.style.display = '';
+                }else{
+                    item.style.display = 'none';
+                }
+            }
         }
     </script>
 </body>
