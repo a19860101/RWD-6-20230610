@@ -10,6 +10,11 @@
 <body>
     <div id="app">
         <h1>{{title}}</h1>
+        <!-- if...else -->
+        <div v-if="qty > 5">庫存充足</div>
+        <div v-else-if="qty > 0">低庫存</div>
+        <div v-else>補貨中</div>
+        <!-- for -->
         <div v-for="(drink,idx) in drinks">內容{{drink}} -- 索引值{{idx}}</div>
         <div v-for="(drink,idx) of drinks">內容{{drink}} -- 索引值{{idx}}</div>
         <ul>
@@ -21,6 +26,7 @@
             data(){
                 return {
                     title: 'Hello Vue',
+                    qty: 0,
                     drinks: ['紅茶','綠茶','奶茶'],
                     users: [
                         {
