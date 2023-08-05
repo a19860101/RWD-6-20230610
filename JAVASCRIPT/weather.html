@@ -12,7 +12,8 @@
         體感溫度
         濕度
      -->
-    <div class="container"></div>
+    <div class="container">
+    </div>
     <script>
         let url = 'https://api.openweathermap.org/data/2.5/weather?q=taipei&units=metric&lang=zh_tw&appid=b1ecbccd638b763d489602917ba47cc3';
         fetch(url)
@@ -22,20 +23,18 @@
             let el = document.querySelector('.container');
 
             let desc = document.createElement('div');
-            desc.append(data.weather[0].description);
+            desc.append(`目前天氣:${data.weather[0].description}`);
 
             let temp = document.createElement('div');
-            temp.append(data.main.temp);
+            temp.append(`氣溫:${data.main.temp}`);
 
             let feels_like = document.createElement('div');
-            feels_like.append(data.main.feels_like);
+            feels_like.append(`體感溫度:${data.main.feels_like}`);
             
             let humidity = document.createElement('div');
-            humidity.append(data.main.humidity);
+            humidity.append(`濕度:${data.main.humidity}`);
 
-            console.log(desc,temp,feels_like,humidity);
-
-            el.append(`目前天氣:${data.weather[0].description}`);
+            el.append(desc,temp,feels_like,humidity);
         })
     </script>
 </body>
