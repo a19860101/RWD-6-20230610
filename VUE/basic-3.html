@@ -9,20 +9,23 @@
 </head>
 <body>
     <div id="app">
-        <button v-on:click="test()">CLICK</button>
+        <input type="text" v-model="msg">
+        <!-- <button v-on:click="test()">CLICK</button> -->
         <button @click="test()">CLICK</button>
+        {{msg}}
     </div>    
     <script>
         Vue.createApp({
             data(){
                 return {
-                    title: 'Hello Vue!'
+                    title: 'Hello Vue!',
+                    msg:''
                 }
             },
             methods:{
                 test(){
-                    console.log(this.title);
-                    alert(this.title)
+                    console.log(this.msg);
+                    alert(this.msg)
                 }
             }
         }).mount('#app')
