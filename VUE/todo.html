@@ -10,7 +10,7 @@
 <body>
     <div id="app">
         <input type="text" v-model="input">
-        <button>新增事項</button>
+        <button @click="add()">新增事項</button>
         <ul>
             <li v-for="todo in todos">{{todo}}</li>
         </ul>
@@ -25,6 +25,16 @@
                         '做作業',
                         '洗衣服',
                     ]
+                }
+            },
+            methods:{
+                add(){
+                    if(this.input === ''){
+                        alert('請輸入資料');
+                        return;
+                    }
+                    this.todos.push(this.input);
+                    this.input = '';
                 }
             }
         }).mount('#app');
