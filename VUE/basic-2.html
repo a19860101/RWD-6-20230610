@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+</head>
+<body>
+    <div id="app">
+        <h1>{{title}}</h1>
+        <div v-for="(drink,idx) in drinks">內容{{drink}} -- 索引值{{idx}}</div>
+        <div v-for="(drink,idx) of drinks">內容{{drink}} -- 索引值{{idx}}</div>
+        <ul>
+            <li v-for="(user,idx) in users">{{idx}}.{{user.name}}:{{user.mail}}</li>
+        </ul>
+    </div>
+    <script>
+        Vue.createApp({
+            data(){
+                return {
+                    title: 'Hello Vue',
+                    drinks: ['紅茶','綠茶','奶茶'],
+                    users: [
+                        {
+                            id:1,
+                            name:'JohnDoe',
+                            mail:'john@gmail.com'
+                        },
+                        {
+                            id:2,
+                            name:'Mary',
+                            mail:'mary@gmail.com'
+                        }
+                    ]
+                }
+            }
+            
+        }).mount('#app');
+    </script>
+</body>
+</html>
