@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-model="input">
+        <button @click="add()">新增事項</button>
+        <ul>
+            <li v-for="todo in todos">
+                <input type="checkbox" v-model="todo.isCompleted">
+                {{todo.title}}
+            </li>
+        </ul>
+    </div>
+    <script>
+        Vue.createApp({
+            data(){
+                return{
+                    input:'',
+                    todos:[
+                        {
+                            id: 1,
+                            title: '洗衣服',
+                            isCompleted: true
+                        },
+                        {
+                            id:2,
+                            title:'做作業',
+                            isCompleted: false
+                        }
+                    ]
+                }
+            },
+            methods:{
+                add(){
+                    if(this.input === ''){
+                        alert('請輸入資料');
+                        return;
+                    }
+                    this.todos.push(this.input);
+                    this.input = '';
+                }
+            }
+        }).mount('#app');
+    </script>
+</body>
+</html>
