@@ -9,6 +9,8 @@
 </head>
 <body>
     <div id="app">
+        <h1>{{title}}</h1>
+        <div>目前共有{{total}}項清單</div>
         <input type="text" v-model="input">
         <button @click="add()">新增事項</button>
         <ul>
@@ -49,6 +51,14 @@
                         isCompleted: false
                     });
                     this.input = '';
+                }
+            },
+            computed:{
+                title(){
+                    return '代辦事項清單'
+                },
+                total(){
+                    return this.todos.length;
                 }
             }
         }).mount('#app');
