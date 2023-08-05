@@ -20,12 +20,18 @@
         <ul>
             <li v-for="(user,idx) in users">{{idx}}.{{user.name}}:{{user.mail}}</li>
         </ul>
+        <img :src="img" alt="">
+        <a v-bind:href="link">yahoo</a>
+        <a :href="link">yahoo</a>
+
     </div>
     <script>
         Vue.createApp({
             data(){
                 return {
                     title: 'Hello Vue',
+                    link: 'https://tw.yahoo.com',
+                    img:'https://picsum.photos/id/22/400',
                     qty: 0,
                     drinks: ['紅茶','綠茶','奶茶'],
                     users: [
