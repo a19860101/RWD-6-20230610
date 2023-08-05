@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+</head>
+<body>
+    <div id="app">
+        {{message}}
+    </div>
+
+    <script>
+    const obj = {
+        name: 'John doe',
+        mail: 'asdf@gmail.com',
+        active(){
+            return 'active';
+        }
+    }
+    // console.log(obj.name);
+    // console.log(obj.mail);
+    console.log(obj.active());
+
+    // const {active} = obj;
+    // console.log(active());
+
+    // const { createApp } = Vue
+
+    Vue.createApp({
+        data() {
+            return {
+                title: 'VUE!',
+                message: 'Hello Vue! 123'
+            }
+        }
+    }).mount('#app')
+    </script>
+</body>
+</html>
