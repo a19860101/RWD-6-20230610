@@ -43,7 +43,11 @@
                         alert('請輸入資料');
                         return;
                     }
-                    this.todos.push(this.input);
+                    this.todos.push({
+                        id: Date.now(),
+                        title: this.input,
+                        isCompleted: false
+                    });
                     this.input = '';
                 }
             }
