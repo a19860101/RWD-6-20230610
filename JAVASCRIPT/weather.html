@@ -40,17 +40,19 @@
     </div>
     <script>
         let city = document.querySelector('#city');
+        let el = document.querySelector('.container');
+        let box = document.createElement('div');
+
         city.onchange = function(){
             console.log(this.value);
             let city = this.value;
-
+            box.textContent = '';
+            
             let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&lang=zh_tw&appid=b1ecbccd638b763d489602917ba47cc3`;
             fetch(url)
             .then(res=>res.json())
             .then(data=>{
                 console.log(data);
-                let el = document.querySelector('.container');
-                let box = document.createElement('div');
                 
                 box.classList.add('box');
 
