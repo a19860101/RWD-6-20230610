@@ -8,24 +8,39 @@
 
 </head>
 <body>
-    <div id="app"></div>
+    <div id="app">
+        <h2>{{title}}</h2>
+        <img :src="`images/${products[0].img}`" alt="">
+        <div>剩餘數量</div>
+        <div>
+            <span>庫存充足</span>
+            <span>低庫存</span>
+            <span>補貨中</span>
+        </div>
+        <div>
+            色彩
+        </div>
+        <div>
+            價格
+        </div>
+    </div>
     <script>
         Vue.createApp({
             data(){
                 return {
+                    title:'純棉背心-童',
                     products:[
                         {
                             id:1,
-                            title: '純棉背心-童',
                             colorName:'白色',
                             hex:'#fff',
                             price: '149',
                             sale:'99',
-                            img:'6012001_500.jpg'
+                            img:'6012001_500.jpg',
+                            qty:3,
                         },
                         {
                             id:2,
-                            title: '純棉背心-童',
                             colorName:'粉紅色',
                             hex:'pink',
                             price: '149',
@@ -34,7 +49,6 @@
                         },
                         {
                             id:3,
-                            title: '純棉背心-童',
                             colorName:'灰綠色',
                             hex:'green',
                             price: '149',
@@ -43,7 +57,6 @@
                         },
                         {
                             id:4,
-                            title: '純棉背心-童',
                             colorName:'灰藍',
                             hex:'navy',
                             price: '149',
@@ -52,7 +65,6 @@
                         },
                         {
                             id:5,
-                            title: '純棉背心-童',
                             colorName:'黑色',
                             hex:'#000',
                             price: '149',
