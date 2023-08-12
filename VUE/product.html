@@ -20,13 +20,15 @@
 </head>
 <body>
     <div id="app">
-        <h2>{{title}}</h2>
+        <h2>{{title}} {{currentIndex}}</h2>
         <img :src="`images/${products[0].img}`" alt="">
         <div class="colors">
             <div 
-                v-for="p in products" 
+                v-for="(p,idx) in products" 
                 class="colorBox" 
-                :style="{backgroundColor:p.hex}">
+                :style="{backgroundColor:p.hex}"
+                @click="changeIndex(idx)"
+                >
             </div>
         </div>
         <div>剩餘數量</div>
@@ -44,6 +46,7 @@
             data(){
                 return {
                     title:'純棉背心-童',
+                    currentIndex: 0,
                     products:[
                         {
                             id:1,
@@ -91,6 +94,11 @@
                             qty:4,
                         },
                     ]
+                }
+            },
+            methods:{
+                changeIndex(idx){
+                    this.currentIndex = idx;
                 }
             }
         }).mount('#app');
