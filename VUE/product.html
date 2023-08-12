@@ -5,20 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-
+    <style>
+        .colors {
+            display: flex;
+            gap: 5px;
+        }
+        .colorBox {
+            width: 40px;
+            height: 40px;
+            border: 1px solid #000;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
     <div id="app">
         <h2>{{title}}</h2>
         <img :src="`images/${products[0].img}`" alt="">
+        <div class="colors">
+            <div 
+                v-for="p in products" 
+                class="colorBox" 
+                :style="{backgroundColor:p.hex}">
+            </div>
+        </div>
         <div>剩餘數量</div>
         <div>
             <span>庫存充足</span>
             <span>低庫存</span>
             <span>補貨中</span>
-        </div>
-        <div>
-            色彩
         </div>
         <div>
             價格
