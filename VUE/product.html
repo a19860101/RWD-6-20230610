@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+</head>
+<body>
+    <div id="app"></div>
+    <script>
+        Vue.createApp({
+            data(){
+                return {
+                    products:[
+                        {
+                            id:1,
+                            title: '純棉背心-童',
+                            colorName:'白色',
+                            hex:'#fff',
+                            price: '149',
+                            sale:'99',
+                            img:'6012001_500.jpg'
+                        },
+                        {
+                            id:2,
+                            title: '純棉背心-童',
+                            colorName:'粉紅色',
+                            hex:'pink',
+                            price: '149',
+                            sale:'99',
+                            img:'6012003_500.jpg'
+                        },
+                        {
+                            id:3,
+                            title: '純棉背心-童',
+                            colorName:'灰綠色',
+                            hex:'green',
+                            price: '149',
+                            sale:'99',
+                            img:'6012006_500.jpg'
+                        },
+                        {
+                            id:4,
+                            title: '純棉背心-童',
+                            colorName:'灰藍',
+                            hex:'navy',
+                            price: '149',
+                            sale:'99',
+                            img:'6012007_500.jpg'
+                        },
+                        {
+                            id:5,
+                            title: '純棉背心-童',
+                            colorName:'黑色',
+                            hex:'#000',
+                            price: '149',
+                            sale:'99',
+                            img:'6012008_500.jpg'
+                        },
+                    ]
+                }
+            }
+        }).mount('#app');
+    </script>
+</body>
+</html>
