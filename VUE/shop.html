@@ -99,6 +99,7 @@
                         <h3>{{p.title}}</h3>
                         <div>{{p.price}}</div>
                         <a href="#" @click="addCart(idx)">加入購物車</a>
+                        <a href="#" @click="addCart2(p.id)">加入購物車</a>
                     </div>
                     
                 </div>
@@ -129,7 +130,12 @@
             methods:{
                 addCart(idx){
                     this.carts.push(this.products[idx]);
+                },
+                addCart2(pid){
+                    let pd = this.products.find(p => p.id === pid);
+                    this.carts.push(pd);
                 }
+
             },
             created(){
                 let url = 'https://fakestoreapi.com/products';
