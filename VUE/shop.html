@@ -109,10 +109,10 @@
             <i class="cart-close fa-solid fa-circle-xmark fa-2x" @click="cartActive = false"></i>
             <div class="cart-body">
                 <div v-if="carts.length===0">購物車是空的，快去購買吧</div>
-                <div class="cart-item" v-for="cart in carts" v-else>
+                <div class="cart-item" v-for="(cart,idx) in carts" v-else>
                     <h3>{{cart.title}}</h3>
                     <div>{{cart.price}}</div>
-                    <a href="#">移除</a>
+                    <a href="#" @click="removeCart(idx)">移除</a>
                 </div>
                 <a href="#" @click="carts.length = 0" v-if="carts.length!=0">清空購物車</a>
             </div>
@@ -134,6 +134,9 @@
                 addCart2(pid){
                     let pd = this.products.find(p => p.id === pid);
                     this.carts.push(pd);
+                },
+                removeCart(idx){
+                    this.carts.splice(idx,1);
                 }
 
             },
