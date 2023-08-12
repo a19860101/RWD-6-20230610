@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -52,6 +53,21 @@
             height: 100%;
             object-fit:scale-down
         }
+        .cart {
+            width: 400px;
+            height: 100%;
+            position: fixed;
+            right: 0;
+            top: 0;
+            background-color: #fff;
+            transform: translateX(0%);
+        }
+        .cart-close {
+            position: absolute;
+            left: 30px;
+            top: 30px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -71,9 +87,14 @@
                     <div class="card-body">
                         <h3>{{p.title}}</h3>
                         <div>{{p.price}}</div>
+                        <a href="#">加入購物車</a>
                     </div>
+                    
                 </div>
             </div>
+        </div>
+        <div class="cart">
+            <i class="cart-close fa-solid fa-circle-xmark fa-2x"></i>
         </div>
     </div>
     <script>
