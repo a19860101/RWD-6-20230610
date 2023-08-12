@@ -20,8 +20,8 @@
 </head>
 <body>
     <div id="app">
-        <h2>{{title}} {{currentIndex}}</h2>
-        <img :src="`images/${products[0].img}`" alt="">
+        <h2>{{title}} / {{colorName}}</h2>
+        <img :src="`images/${img}`" alt="">
         <div class="colors">
             <div 
                 v-for="(p,idx) in products" 
@@ -77,7 +77,7 @@
                         },
                         {
                             id:4,
-                            colorName:'灰藍',
+                            colorName:'灰藍色',
                             hex:'#5e7b91',
                             price: '149',
                             sale:'99',
@@ -99,6 +99,17 @@
             methods:{
                 changeIndex(idx){
                     this.currentIndex = idx;
+                }
+            },
+            computed:{
+                active(){
+                    return this.products[this.currentIndex];
+                },
+                img(){
+                    return this.active.img;
+                },
+                colorName(){
+                    return this.active.colorName;
                 }
             }
         }).mount('#app');
