@@ -60,6 +60,10 @@
             right: 0;
             top: 0;
             background-color: #fff;
+            transform: translateX(100%);
+            transition: 500ms;
+        }
+        .cart.active{
             transform: translateX(0%);
         }
         .cart-close {
@@ -75,7 +79,7 @@
         <nav>
             <a href="#">Store</a>
             <div class="nav-menu">
-                <a href="#">購物車</a>
+                <a href="#" @click="cartActive = true">購物車</a>
             </div>
         </nav>
         <div class="container row">
@@ -93,17 +97,19 @@
                 </div>
             </div>
         </div>
-        <div class="cart">
-            <i class="cart-close fa-solid fa-circle-xmark fa-2x"></i>
+        <div class="cart" :class="{active:cartActive}">
+            <i class="cart-close fa-solid fa-circle-xmark fa-2x" @click="cartActive = false"></i>
         </div>
     </div>
     <script>
         Vue.createApp({
             data(){
                 return {
+                    cartActive: false,
                     products:''
                 }
             },
+
             created(){
                 let url = 'https://fakestoreapi.com/products';
                 fetch(url)
