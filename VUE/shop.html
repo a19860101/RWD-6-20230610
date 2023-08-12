@@ -5,7 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        nav {
+            width: 100%;
+            padding-inline: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #222;
+            height: 60px;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+        }
+        img {
+            width: 100%;
+        }
+        .container {
+            max-width: 1200px;
+            margin-inline: auto;
+        }
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .col {
+            flex: 1 0 300px;
+            padding: 15px;
+        }
+        .card {
+            border: 1px solid #000;
+            padding: 15px;
+            height: 500px;
+            border-radius: 5px;
+        }
+        .card-cover {
+            height: 300px;
+        }
+        .card-cover img {
+            height: 100%;
+            object-fit:scale-down
+        }
+    </style>
 </head>
 <body>
     <div id="app">
@@ -16,7 +63,17 @@
             </div>
         </nav>
         <div class="container row">
-            {{products}}
+            <div class="col" v-for="p in products">
+                <div class="card">
+                    <div class="card-cover">
+                        <img :src="p.image" alt="">
+                    </div>
+                    <div class="card-body">
+                        <h3>{{p.title}}</h3>
+                        <div>{{p.price}}</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <script>
