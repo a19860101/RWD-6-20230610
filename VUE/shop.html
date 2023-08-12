@@ -114,6 +114,7 @@
                     <div>{{cart.price}}</div>
                     <a href="#" @click="removeCart(idx)">移除</a>
                 </div>
+                <div v-if="carts.length > 0">總金額: {{total}}</div>
                 <a href="#" @click="carts.length = 0" v-if="carts.length!=0">清空購物車</a>
             </div>
         </div>
@@ -139,6 +140,18 @@
                     this.carts.splice(idx,1);
                 }
 
+            },
+            computed:{
+                price(){
+                    return this.carts.map(data=>data.price);
+                },
+                total(){
+                    if(this.carts.length > 0){
+                        return this.price.reduce((a,b)=>a+b);
+                    }else{
+                        return 0;
+                    }
+                }
             },
             created(){
                 let url = 'https://fakestoreapi.com/products';
