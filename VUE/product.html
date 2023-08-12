@@ -20,8 +20,8 @@
 </head>
 <body>
     <div id="app">
-        <h2>{{title}} / {{colorName}}</h2>
-        <img :src="`images/${img}`" alt="">
+        <h2>{{title}} / {{active.colorName}}</h2>
+        <img :src="`images/${active.img}`" alt="">
         <div class="colors">
             <div 
                 v-for="(p,idx) in products" 
@@ -31,14 +31,16 @@
                 >
             </div>
         </div>
-        <div>剩餘數量</div>
+        <div>剩餘數量{{active.qty}}</div>
         <div>
-            <span>庫存充足</span>
-            <span>低庫存</span>
-            <span>補貨中</span>
+            <span v-if="active.qty > 5">庫存充足</span>
+            <span v-else-if="active.qty > 0">低庫存</span>
+            <span v-else>補貨中</span>
         </div>
         <div>
-            價格
+            <span v-if="active.sale">特價:{{active.sale}}</span>
+            <span v-else>原價:{{active.price}}</span>
+            
         </div>
     </div>
     <script>
@@ -53,7 +55,7 @@
                             colorName:'白色',
                             hex:'#fff',
                             price: '149',
-                            sale:'99',
+                            sale:'',
                             img:'6012001_500.jpg',
                             qty:3,
                         },
@@ -89,7 +91,7 @@
                             colorName:'黑色',
                             hex:'#000',
                             price: '149',
-                            sale:'99',
+                            sale:'',
                             img:'6012008_500.jpg',
                             qty:4,
                         },
