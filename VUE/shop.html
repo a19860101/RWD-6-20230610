@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+</head>
+<body>
+    <div id="app">
+        <nav>
+            <a href="#">Store</a>
+            <div class="nav-menu">
+                <a href="#">購物車</a>
+            </div>
+        </nav>
+        <div class="container row">
+            {{products}}
+        </div>
+    </div>
+    <script>
+        Vue.createApp({
+            data(){
+                return {
+                    products:''
+                }
+            },
+            created(){
+                let url = 'https://fakestoreapi.com/products';
+                fetch(url)
+                .then(res=>res.json())
+                .then(data => {
+                    console.log(data);
+                    this.products = data
+                })
+            }
+        }).mount('#app')
+    </script>
+</body>
+</html>
