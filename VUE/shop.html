@@ -79,6 +79,22 @@
         .cart-item {
             padding-block:15px;
         }
+        .cart-btn {
+            position: relative;
+        }
+        .cartNumber {
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            font-size: 10px;
+            border-radius: 50%;
+            background-color: #f00;
+            left: -10px;
+            top: -10px;
+            display: flex;
+            justify-content: center;
+            align-items: center ;
+        }
     </style>
 </head>
 <body>
@@ -86,7 +102,10 @@
         <nav>
             <a href="#">Store</a>
             <div class="nav-menu">
-                <a href="#" @click="cartActive = true">購物車</a>
+                <a href="#" @click="cartActive = true" class="cart-btn">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="cartNumber">{{carts.length}}</span>
+                </a>
             </div>
         </nav>
         <div class="container row">
