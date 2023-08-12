@@ -114,7 +114,7 @@
                     <div>{{cart.price}}</div>
                     <a href="#">移除</a>
                 </div>
-               
+                <a href="#" @click="carts.length = 0" v-if="carts.length!=0">清空購物車</a>
             </div>
         </div>
     </div>
