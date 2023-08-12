@@ -90,7 +90,7 @@
             </div>
         </nav>
         <div class="container row">
-            <div class="col" v-for="p in products">
+            <div class="col" v-for="(p,idx) in products">
                 <div class="card">
                     <div class="card-cover">
                         <img :src="p.image" alt="">
@@ -98,7 +98,7 @@
                     <div class="card-body">
                         <h3>{{p.title}}</h3>
                         <div>{{p.price}}</div>
-                        <a href="#">加入購物車</a>
+                        <a href="#" @click="addCart(idx)">加入購物車</a>
                     </div>
                     
                 </div>
@@ -123,15 +123,14 @@
                 return {
                     cartActive: false,
                     products:'',
-                    carts:[
-                        {
-                            title:'test',
-                            price:'999'
-                        }
-                    ]
+                    carts:[]
                 }
             },
-
+            methods:{
+                addCart(idx){
+                    this.carts.push(this.products[idx]);
+                }
+            },
             created(){
                 let url = 'https://fakestoreapi.com/products';
                 fetch(url)
