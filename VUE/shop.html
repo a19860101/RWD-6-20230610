@@ -72,6 +72,13 @@
             top: 30px;
             cursor: pointer;
         }
+        .cart-body {
+            padding-top: 80px;
+            padding-inline:30px;
+        }
+        .cart-item {
+            padding-block:15px;
+        }
     </style>
 </head>
 <body>
@@ -99,6 +106,15 @@
         </div>
         <div class="cart" :class="{active:cartActive}">
             <i class="cart-close fa-solid fa-circle-xmark fa-2x" @click="cartActive = false"></i>
+            <div class="cart-body">
+                <div v-if="carts.length===0">購物車是空的，快去購買吧</div>
+                <div class="cart-item" v-for="cart in carts" v-else>
+                    <h3>{{cart.title}}</h3>
+                    <div>{{cart.price}}</div>
+                    <a href="#">移除</a>
+                </div>
+               
+            </div>
         </div>
     </div>
     <script>
@@ -106,7 +122,13 @@
             data(){
                 return {
                     cartActive: false,
-                    products:''
+                    products:'',
+                    carts:[
+                        {
+                            title:'test',
+                            price:'999'
+                        }
+                    ]
                 }
             },
 
