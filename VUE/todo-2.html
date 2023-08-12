@@ -20,14 +20,14 @@
 
         <h3>未完成</h3>
         <ul>
-            <li v-for="todo in unCompleteTodos">
+            <li v-for="todo in unCompleteTodos" :key="todo.id">
                 <input type="checkbox" v-model="todo.isCompleted">
                 {{todo.title}}
             </li>
         </ul>
         <h3>已完成</h3>
         <ul>
-            <li v-for="todo in completeTodos">
+            <li v-for="todo in completeTodos" :key="todo.id">
                 <input type="checkbox" v-model="todo.isCompleted">
                 {{todo.title}}
             </li>
@@ -40,7 +40,7 @@
                     input:'',
                     todos:[
                         {
-                            id: 1,
+                            id: 1,//主鍵 (永遠遞增、永不重複、永不改變)      1,2,delete,4,5,6,7 
                             title: '洗衣服',
                             isCompleted: true
                         },
