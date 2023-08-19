@@ -19,6 +19,11 @@
             background-color: #ffde5b;
             padding: 10px;
             border-bottom:#c1ab55 5px solid;
+            cursor: pointer;
+            transition: 500ms;
+        }
+        h3:hover {
+            background-color: #ff8aa7;
         }
         .panel {
             padding: 10px;
@@ -66,5 +71,12 @@
             </p>
         </div>
     </div>    
+    <script>
+        $(function(){
+            $('h3').click(function(){
+                $(this).next().slideToggle();
+            })
+        })
+    </script>
 </body>
 </html>
