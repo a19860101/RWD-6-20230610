@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -21,6 +22,10 @@
             border-bottom:#c1ab55 5px solid;
             cursor: pointer;
             transition: 500ms;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         h3:hover {
             background-color: #ff8aa7;
@@ -28,6 +33,12 @@
         h3.active {
             background-color: #ff8aa7;
 
+        }
+        i {
+            transition: 500ms;
+        }
+        h3.active i {
+            transform: rotate(180deg);
         }
         .panel {
             padding: 10px;
@@ -38,7 +49,9 @@
 </head>
 <body>
     <div class="collapse">
-        <h3>title 1</h3>
+        <h3>title 1
+            <i class="fa-solid fa-chevron-up"></i>
+        </h3>
         <div class="panel">
             <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo voluptatum similique quae asperiores eaque nisi. Sint nemo nobis odio vero vel, eligendi, ipsum sed exercitationem iste, recusandae ea eum maiores?
@@ -47,7 +60,7 @@
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque ex, animi molestias minus sequi possimus. Repellendus doloribus corporis saepe? Rem beatae provident praesentium inventore dolore magnam commodi reiciendis, ipsa harum.
             </p>
         </div>
-        <h3>title 2</h3>
+        <h3>title 2<i class="fa-solid fa-chevron-up"></i></h3>
         <div class="panel">
             <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo voluptatum similique quae asperiores eaque nisi. Sint nemo nobis odio vero vel, eligendi, ipsum sed exercitationem iste, recusandae ea eum maiores?
@@ -59,13 +72,13 @@
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque ex, animi molestias minus sequi possimus. Repellendus doloribus corporis saepe? Rem beatae provident praesentium inventore dolore magnam commodi reiciendis, ipsa harum.
             </p>
         </div>
-        <h3>title 3</h3>
+        <h3>title 3<i class="fa-solid fa-chevron-up"></i></h3>
         <div class="panel">
             <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo voluptatum similique quae asperiores eaque nisi. Sint nemo nobis odio vero vel, eligendi, ipsum sed exercitationem iste, recusandae ea eum maiores?
             </p>
         </div>
-        <h3>title 4</h3>
+        <h3>title 4<i class="fa-solid fa-chevron-up"></i></h3>
         <div class="panel">
             <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo voluptatum similique quae asperiores eaque nisi. Sint nemo nobis odio vero vel, eligendi, ipsum sed exercitationem iste, recusandae ea eum maiores?
@@ -78,8 +91,8 @@
     <script>
         $(function(){
             $('h3').click(function(){
-                $('.panel').slideUp();
-                $('h3.active').removeClass('active');
+                // $('.panel').slideUp();
+                // $('h3.active').removeClass('active');
                 $(this).next().slideToggle();
                 $(this).toggleClass('active');
             })
