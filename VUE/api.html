@@ -5,10 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            gap: 15px;
+            margin-inline: auto;
+        }
+        .item {
+            background-color: #ccc;
+            flex: 1 1 385px;
+            padding: 15px;
+        }
+    </style>
 </head>
 <body>
-    <div id="app"></div>
+    <div id="app">
+        <h2>空氣品質</h2>
+        <div class="container">
+            <div v-for="data in datas" class="item">
+                <div>
+                    {{data.county}} / {{data.sitename}}
+                </div>
+                <div>空氣品質 {{data.status}}</div>
+                <div>AQI:{{data.aqi}}</div>
+                <div>一氧化氮:{{data.no}}</div>
+                <div>二氧化氮:{{data.no2}}</div>
+                <div>PM2.5:{{data['pm2.5']}}</div>
+                <div>二氧化硫:{{data.so2}}</div>
+            </div>
+        </div>
+    </div>
     <script>
         Vue.createApp({
             data(){
