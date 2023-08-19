@@ -25,6 +25,10 @@
         h3:hover {
             background-color: #ff8aa7;
         }
+        h3.active {
+            background-color: #ff8aa7;
+
+        }
         .panel {
             padding: 10px;
             background-color: #ffeeac;
@@ -74,7 +78,10 @@
     <script>
         $(function(){
             $('h3').click(function(){
+                $('.panel').slideUp();
+                $('h3.active').removeClass('active');
                 $(this).next().slideToggle();
+                $(this).toggleClass('active');
             })
         })
     </script>
