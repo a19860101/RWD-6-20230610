@@ -28,14 +28,14 @@
 <body>
     <div id="app">
         <h2>空氣品質</h2>
-        <select name="county" id="county" v-model="selectedCounty" @change="result()">
+        <select name="county" id="county" v-model="selectedCounty">
             <option>請選擇城市</option>
             <template  v-for="c in county">
                 <option :value="c">{{c}}</option>
             </template>
         </select>
         <div class="container">
-            <div v-for="data in selectedDatas" class="item">
+            <div v-for="data in result" class="item">
                 <div>
                     {{data.county}} / {{data.sitename}}
                 </div>
@@ -59,12 +59,6 @@
                     selectedDatas:[]
                 }
             },
-            methods:{
-                result(){
-                    console.log(this.selectedCounty);
-                    this.selectedDatas = this.datas.filter(data=>data.county === this.selectedCounty);
-                }
-            },
             computed:{
                 county(){
                     // let county = [...new Set(this.datas.map(data=>data.county))];
@@ -73,6 +67,13 @@
                     // county = [...county];
                     return [...new Set(this.datas.map(data=>data.county))];
                 },
+                result(){
+                    if(this.selectedCounty === '請選擇城市'){
+                        return this.datas;
+                    }else{
+                        return this.datas.filter(data=>data.county === this.selectedCounty);
+                    }
+                }
             },
             created(){
                 let url ='https://data.epa.gov.tw/api/v2/aqx_p_432?api_key=e8dd42e6-9b8b-43f8-991e-b3dee723a52d&limit=1000&sort=ImportDate%20desc&format=JSON';
