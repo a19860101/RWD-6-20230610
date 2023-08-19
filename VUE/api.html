@@ -28,6 +28,7 @@
 <body>
     <div id="app">
         <h2>空氣品質</h2>
+        {{county}}
         <div class="container">
             <div v-for="data in datas" class="item">
                 <div>
@@ -43,10 +44,21 @@
         </div>
     </div>
     <script>
+        let data = new Set(['台北市','桃園市','桃園市','新竹市']);
+        console.log(data);
         Vue.createApp({
             data(){
                 return {
-                    datas:''
+                    datas:[],
+                }
+            },
+            computed:{
+                county(){
+                    // let county = [...new Set(this.datas.map(data=>data.county))];
+                    // county = new Set(county);
+                    // county = Array.from(county);
+                    // county = [...county];
+                    return [...new Set(this.datas.map(data=>data.county))];
                 }
             },
             created(){
