@@ -28,7 +28,11 @@
 <body>
     <div id="app">
         <h2>空氣品質</h2>
-        {{county}}
+        <select name="county" id="county">
+            <template  v-for="c in county">
+                <option>{{c}}</option>
+            </template>
+        </select>
         <div class="container">
             <div v-for="data in datas" class="item">
                 <div>
@@ -50,6 +54,7 @@
             data(){
                 return {
                     datas:[],
+                    selectedCounty:''
                 }
             },
             computed:{
