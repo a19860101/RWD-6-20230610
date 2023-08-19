@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        .modal {
+            /* display: none; */
+            opacity: 0;
+            visibility: hidden;
+
+            transition: 500ms;
+        }
+        .modal.active {
+            /* display: block; */
+            opacity: 1;
+            visibility: visible;
+        }
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background-color: rgb(0 0 0 / .8);
+        }
+        .modal-container {
+            max-width: 800px;
+            width: 85%;
+            height: fit-content;
+            padding: 30px;
+            background-color: #fff;
+            position: fixed;
+            inset:0;
+            margin: auto;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <a href="#modal-1" data-modal="#modal-1" class="modal-btn">Modal 1</a>
+    <a href="#modal-2" data-modal="#modal-2" class="modal-btn">Modal 2</a>
+    <div class="modal" id="modal-1">
+        <div class="modal-overlay modal-close"></div>
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2>Modal 1</h2>
+            </div>
+            <div class="modal-body">
+                <h3>title</h3>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem officia autem in odio maiores aliquid rem ad, facere sint saepe blanditiis ipsum? Deserunt cupiditate cumque provident eveniet libero natus eligendi.
+                </p>
+            </div>
+            <div class="modal-footer">
+                <a href="#" class="modal-close">close</a>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="modal-2">
+        <div class="modal-overlay modal-close"></div>
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2>Modal 2</h2>
+            </div>
+            <div class="modal-body">
+                <h3>title</h3>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem officia autem in odio maiores aliquid rem ad, facere sint saepe blanditiis ipsum? Deserunt cupiditate cumque provident eveniet libero natus eligendi.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem officia autem in odio maiores aliquid rem ad, facere sint saepe blanditiis ipsum? Deserunt cupiditate cumque provident eveniet libero natus eligendi.
+                </p>
+            </div>
+            <div class="modal-footer">
+                <a href="#" class="modal-close">close</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(function(){
+            $('.modal-btn').click(function(){
+                let href = $(this).attr('href');
+                let modal = $(this).data('modal');
+                $(modal).addClass('active');
+            })
+            $('.modal-close').click(function(){
+                $('.modal').removeClass('active')
+            })
+        })
+    </script>
+</body>
+</html>
