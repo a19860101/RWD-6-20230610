@@ -103,9 +103,25 @@
 
             });
             $('.products').slick({
-                slidesToShow:3,
+                slidesToShow: 5,
+
                 dots: true,
                 centerMode: true,
+                responsive:[
+                    {
+                        breakpoint: 1200,
+                        settings:{
+                            slidesToShow: 3,
+                        }
+                    },
+                    {
+                        breakpoint:760,
+                        settings:{
+                            slidesToShow:2,
+                            dots: false
+                        }
+                    }
+                ]
 
             })
         })
