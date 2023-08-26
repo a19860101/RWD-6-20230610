@@ -12,12 +12,15 @@
         body {
             background-color: #ffe77d;
         }
-        header {
+        header,.container {
             max-width:1200px;
             margin-inline: auto;
         }
         img {
             width: 100%;
+        }
+        .product-item {
+            margin-inline: 5px;
         }
     </style>
 </head>
@@ -41,6 +44,51 @@
             </div>
         </div>
     </header>
+    <div class="container">
+
+        <div class="products">
+            <div class="product-item">
+                <img src="https://picsum.photos/id/23/800/600" alt="">
+            </div>
+            <div class="product-item">
+                <img src="https://picsum.photos/id/33/800/600" alt="">
+            </div>
+            <div class="product-item">
+                <img src="https://picsum.photos/id/43/800/600" alt="">
+            </div>
+            <div class="product-item">
+                <img src="https://picsum.photos/id/53/800/600" alt="">
+            </div>
+            <div class="product-item">
+                <img src="https://picsum.photos/id/63/800/600" alt="">
+            </div>
+            <div class="product-item">
+                <img src="https://picsum.photos/id/73/800/600" alt="">
+            </div>
+            <div class="product-item">
+                <img src="https://picsum.photos/id/83/800/600" alt="">
+            </div>
+            <div class="product-item">
+                <img src="https://picsum.photos/id/93/800/600" alt="">
+            </div>
+            <div class="product-item">
+                <img src="https://picsum.photos/id/21/800/600" alt="">
+            </div>
+            <div class="product-item">
+                <img src="https://picsum.photos/id/22/800/600" alt="">
+            </div>
+            <div class="product-item">
+                <img src="https://picsum.photos/id/24/800/600" alt="">
+            </div>
+            <div class="product-item">
+                <img src="https://picsum.photos/id/25/800/600" alt="">
+            </div>
+            <div class="product-item">
+                <img src="https://picsum.photos/id/26/800/600" alt="">
+            </div>
+        </div>
+    </div>
+
     <script>
         $(function(){
             $('.slick').slick({
@@ -49,9 +97,17 @@
                 speed: 600,
                 arrows: true,
                 dots: true,
-                slidesToShow: 2,
-                slidesToScroll:2,
+                fade: true,
+                centerMode: false,
+                centerPadding: '200px'
+
             });
+            $('.products').slick({
+                slidesToShow:3,
+                dots: true,
+                centerMode: true,
+
+            })
         })
     </script>
 </body>
