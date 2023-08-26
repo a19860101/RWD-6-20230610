@@ -88,10 +88,22 @@
     <script>
         $(function(){
             $('.slider').owlCarousel({
-                items: 1
+                items: 1,
+                autoplay: true,
+                loop: true,
+                autoplayTimeout: 5000,
+                autoplaySpeed: 1500,
+                dotsSpeed: 2000,
+                dots: true,
+                nav: true,
+                navSpeed:2000
             });
             $('.products').owlCarousel({
-                items:5
+                items:5,
+                margin: 10,
+                center: true,
+                loop: true,
+                nav: true
             });
         })
     </script>
