@@ -11,12 +11,33 @@
 <body>
     <!-- 
         0:0,1:4px,2:8px,3:16px,4:24px,5:48px
+        
         g-0,g-1,g-2,g-3,g-4,g-5
         gx-0,gx-1,gx-2,gx-3,gx-4,gx-5
         gy-0,gy-1,gy-2,gy-3,gy-4,gy-5
+
+        m => margin
+        mt => margin-top
+        mb => margin-bottom
+        ms => margin-left,margin-inline-start
+        me => margin-right,margin-inline-end
+        mx => margin-left,margin-right
+        my => margin-top,margin-bottom
+        
+        p => padding
+        pt => padding-top
+        pb => padding-bottom
+        ps => padding-left,padding-inline-start
+        pe => padding-right,padding-inline-end
+        px => padding-left,padding-right
+        py => padding-top,padding-bottom
+
      -->
     <div class="container-md">
         <div class="row g-0">
+            <div class="col-12">
+                <h2 class="my-5 bg-primary text-white p-md-2 p-5">HELLO</h2>
+            </div>
             <div class="col-md-3 col-6">
                 <img src="https://picsum.photos/800/600?random=1" alt="" class="w-100">
             </div>
@@ -40,6 +61,9 @@
             </div>
             <div class="col-md-3 col-6">
                 <img src="https://picsum.photos/800/600?random=8" alt="" class="w-100">
+            </div>
+            <div class="col-3 me-auto bg-primary">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae aperiam, nobis illum odit modi nostrum minus doloribus suscipit quidem iusto magni libero soluta possimus fugiat. Expedita fugiat modi doloribus fugit.
             </div>
         </div>
     </div>
