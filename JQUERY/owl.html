@@ -106,7 +106,7 @@
                 stagePadding: 100,
             });
             $('.products').owlCarousel({
-                items:4,
+                // items:4,
                 margin: 10,
                 center: true,
                 loop: true,
@@ -115,6 +115,19 @@
                     '<i class="fa-solid fa-angle-left fa-2x"></i>',
                     '<i class="fa-solid fa-angle-right fa-2x"></i>'
                 ],
+                responsive:{
+                    0:{
+                        items:2,
+                        dots: false,
+                        nav: false
+                    },
+                    760:{
+                        items:4
+                    },
+                    1200:{
+                        items:5
+                    }
+                }
             });
         })
     </script>
